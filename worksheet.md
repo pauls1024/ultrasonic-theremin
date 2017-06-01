@@ -79,13 +79,13 @@ Sonic Pi is going to receive messages from your Python script. This will tell So
 
 1. Lastly, you need to play the note.
 
-```ruby
-live_loop :listen do
-    message = sync "/play_this"
-	note = message[:args][0]
-	play note
-end
-```
+	```ruby
+	live_loop :listen do
+		message = sync "/play_this"
+		note = message[:args][0]
+		play note
+	end
+	```
 
 1. You can set this live loop to play straight away, by clicking on the **Run** button. You won't hear anything yet, as the loop is not receiving any messages.
 
@@ -175,7 +175,20 @@ Remember you need to run this in python3 NOT python2.
 
 - Have a play with different synths, as shown in the Sonic Pi help menu. What effect does changing the synth have on your theremin?
 
-- What about adding a backing rhythm (drums) in a loop in Sonic Pi?
+- What about adding a backing rhythm (drums) in a loop in Sonic Pi?  Some ideas from <a href="http://sonic-pi.mehackit.org/exercises/en/02-make-a-song/02-drum-beat.html">http://sonic-pi.mehackit.org</a> might be useful eg
+	```ruby
+	use_bpm 100
+	live_loop :drums do
+		sample :drum_heavy_kick
+		sleep 1
+		sample :drum_snare_hard
+		sleep 1
+		sample :drum_heavy_kick
+		sleep 1
+		sample :drum_snare_hard
+		sleep 1
+	end
+	```
 
 - Can you sync the backing loop and playing a note?
 
