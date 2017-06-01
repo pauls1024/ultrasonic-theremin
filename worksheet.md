@@ -31,7 +31,7 @@ The diagram below shows one suggested arrangement for setting this up.
 Thanks to the abstractions in the GPIO Zero module, you can very easily detect how far away an object is from the distance sensor. If you've wired up the sensor as shown in the diagram, then your echo pin is **17** and your trigger pin is **4**.
 
 1. Click on **Menu** > **Programming** > **Python 3 (IDLE)**, to open up a new Python shell.
-1. In the shell, click on **New** > **New File** to create a new Python file.
+1. In the shell, click on **File** > **New File** to create a new Python file.
 1. The code to detect distance is below. Type it into your new file, then save and run it by clicking on **Run** > **Run Module** or pressing **F5**.  To stop your program hold **CTRL** key and press **C**.
 
 	```python
