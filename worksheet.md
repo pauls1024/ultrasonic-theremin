@@ -168,3 +168,8 @@ To finish your program, you need to send note midi values to Sonic Pi from your 
 - What happens if you change the timing in the Python file? Can you produce a smoother transition of notes?
 
 - Have a play with different synths, as shown in the Sonic Pi help menu. What effect does changing the synth have on your theremin?
+
+- What about adding a backing rhythm (drums) in a loop in Sonic Pi?
+
+-Can you sync the backing loop and playing a note?
+
