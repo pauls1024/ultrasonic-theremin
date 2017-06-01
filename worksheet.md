@@ -12,7 +12,7 @@ Thereminist Lydia Kavina playing in Ekaterinburg (<a href="https://en.wikipedia.
 
 An ultrasonic distance sensor is a device that sends out pulses of ultrasonic sound, and measures the time they take to bounce off nearby objects and be reflected back. They can measure distances fairly accurately, up to about a meter.
 
-![ultrasonic](images/Ultrasonic_Distance_Sensor.png)
+![ultrasonic](images/Ultsonic_rangefinder_bb.png)
 
 An ultrasonic distance sensor has four pins. They are called **Ground** (**Gnd**), **Trigger** (**Trig**), **Echo** (**Echo**) and **Power** (**Vcc**).
 
@@ -20,7 +20,7 @@ To use an ultrasonic distance sensor you need to connect the **Gnd** pin to the 
 
 The **Echo** pin is a little more complicated. It needs to be connected through a 330 ohm resistor to a GPIO pin on the Raspberry Pi, and that pin needs to be grounded through a 470 ohm resistor.
 
-If you dont have a 330 ohm resistor you could connect a 220 ohm and a 100 ohm resistor in series (a line). They would add together to make up a 320 ohm resistance ... which is close enough!
+We dont have a 330 ohm resistor so we will connect a 220 ohm and a 100 ohm resistor in series (a line). They would add together to make up a 320 ohm resistance ... which is close enough!
 
 The diagram below shows one suggested arrangement for setting this up.
 
