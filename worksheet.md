@@ -159,8 +159,8 @@ To finish your program, you need to send note midi values to Sonic Pi from your 
 		pitch = round(sensor.distance * 100 + 30)
                 print(pitch)
                 if (pitch>40 and pitch<125):
-                    print("sending message to sonic pi")
-		    sender.send_message('/play_this', pitch)
+			print("sending message to sonic pi")
+			sender.send_message('/play_this', pitch)
 		sleep(0.1)
 	```
 
