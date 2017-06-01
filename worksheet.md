@@ -12,7 +12,7 @@ Thereminist Lydia Kavina playing in Ekaterinburg (<a href="https://en.wikipedia.
 
 An ultrasonic distance sensor is a device that sends out pulses of ultrasonic sound, and measures the time they take to bounce off nearby objects and be reflected back. They can measure distances fairly accurately, up to about a meter.
 
-![ultrasonic](images/Ultsonic_rangefinder_bb.png)
+![ultrasonic](images/Ultrasonic_Distance_Sensor.png)
 
 An ultrasonic distance sensor has four pins. They are called **Ground** (**Gnd**), **Trigger** (**Trig**), **Echo** (**Echo**) and **Power** (**Vcc**).
 
@@ -24,7 +24,7 @@ We dont have a 330 ohm resistor so we will connect a 220 ohm and a 100 ohm resis
 
 The diagram below shows one suggested arrangement for setting this up.
 
-![circuit](images/circuit.png)
+![circuit](images/ultrasonic_rangefinder_bb.png)
 
 ## Detecting distance
 
@@ -60,7 +60,7 @@ Sonic Pi is going to receive messages from your Python script. This will tell So
 	end
 	```
 
-1. Next you can sync the live loop with the messages that will be coming from Python.
+1. Next you can add another live loop to sync with the messages that will be coming from Python.
 
 	```ruby
 	live_loop :listen do
@@ -143,7 +143,7 @@ To finish your program, you need to send note midi values to Sonic Pi from your 
 		sleep(1)
 	```
 
-1. To finish off, you need to send the pitch over to Sonic Pi, and reduce the sleep time.
+1. To finish off, you need to send the pitch over to Sonic Pi, and reduce the sleep time.  You might also want to add a couple of print lines, these help you to see what is going on when the program is running.  And it might be good if the SonicPi stops playing sounds when you have moved your hand away ... so lets only send data to Sonic Pi when the program calculates a pitch within a sensible range (eg between 40 and 125)
 
 	```python
 	from gpiozero import DistanceSensor
@@ -157,11 +157,15 @@ To finish your program, you need to send note midi values to Sonic Pi from your 
 
 	while True:
 		pitch = round(sensor.distance * 100 + 30)
-		sender.send_message('/play_this', pitch)
+                print(pitch)
+                if (pitch>40 and pitch<125):
+                    print("sending message to sonic pi")
+		    sender.send_message('/play_this', pitch)
 		sleep(0.1)
 	```
 
 1. Save and run your code and see what happens. If all goes well, you've made your very own theremin.
+Remember you need to run this in python3 NOT python2.
 
 ## What next?
 
@@ -173,5 +177,5 @@ To finish your program, you need to send note midi values to Sonic Pi from your 
 
 - What about adding a backing rhythm (drums) in a loop in Sonic Pi?
 
--Can you sync the backing loop and playing a note?
+- Can you sync the backing loop and playing a note?
 
