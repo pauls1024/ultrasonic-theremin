@@ -32,7 +32,7 @@ Thanks to the abstractions in the GPIO Zero module, you can very easily detect h
 
 1. Click on **Menu** > **Programming** > **Python 3 (IDLE)**, to open up a new Python shell.
 1. In the shell, click on **New** > **New File** to create a new Python file.
-1. The code to detect distance is below. Type it into your new file, then save and run it by clicking on **Run** > **Run Module** or pressing **F5**.  To stop yout program hold **CTRL** key and press **C**.
+1. The code to detect distance is below. Type it into your new file, then save and run it by clicking on **Run** > **Run Module** or pressing **F5**.  To stop your program hold **CTRL** key and press **C**.
 
 	```python
 	from gpiozero import DistanceSensor
